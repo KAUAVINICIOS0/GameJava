@@ -1,0 +1,32 @@
+package game.Model;
+
+import java.awt.Image;
+
+import javax.swing.ImageIcon;
+
+public class Shot {
+	
+	private Image image;
+	private int x, y;
+	private int width, height;
+	private boolean isVisible;
+	
+	
+	private static final int WIDTH = 938;
+	private static int SPEED = 2;
+	
+	
+	public Shot(int x, int y) {
+		this.x = x;
+		this.y = y;
+		isVisible = true;
+	}
+	
+	public void load() {
+		ImageIcon reference = new ImageIcon("res\\shot.png");
+		image = reference.getImage();
+		
+		this.width = image.getWidth(null);
+		this.height = image.getHeight(null);
+	}
+}

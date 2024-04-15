@@ -1,0 +1,9 @@
+package game.Model;
+
+public class Shot {
+	
+	private Image image;
+	private int x, y;
+	private int width, height;
+	private boolean isVisivel;
+}

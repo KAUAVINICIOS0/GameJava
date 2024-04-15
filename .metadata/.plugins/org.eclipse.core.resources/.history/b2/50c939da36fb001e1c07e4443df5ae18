@@ -1,0 +1,15 @@
+package game.Model;
+
+import java.awt.Image;
+
+public class Shot {
+	
+	private Image image;
+	private int x, y;
+	private int width, height;
+	private boolean isVisible;
+	
+	
+	private static final int WIDTH = 938;
+	private static int SPEED = 2;
+}
