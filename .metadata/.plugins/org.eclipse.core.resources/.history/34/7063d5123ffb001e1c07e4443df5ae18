@@ -1,6 +1,7 @@
 package game;
 
 import javax.swing.JFrame;
+
 import game.Model.Stage;
 
 public class Container extends JFrame{
