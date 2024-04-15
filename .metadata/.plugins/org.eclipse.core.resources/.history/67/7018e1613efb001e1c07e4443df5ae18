@@ -44,13 +44,11 @@ public class Player {
 	}
 	
 	public void keyPressed(KeyEvent key) {
-		long currentTime = System.currentTimeMillis();
-
-	    int code = key.getKeyCode();
-
-	    if (code == KeyEvent.VK_A) {
-	        simpleShot(currentTime);
-	    }
+		int code  = key.getKeyCode();
+		
+		if(code == KeyEvent.VK_A) {
+			simpleShot();
+		}
 		
 		if(code == KeyEvent.VK_UP) {
 			dy = -3;

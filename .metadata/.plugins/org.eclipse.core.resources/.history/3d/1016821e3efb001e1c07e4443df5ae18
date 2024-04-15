@@ -14,8 +14,7 @@ public class Player {
 	private Image image;
 	private int height, width;
 	private List <Shot> shots;
-	private long lastShotTime;
-	private static final long SHOT_DELAY = 200;	
+	
 	
 	public Player() {
 		this.x = 100;
@@ -36,21 +35,16 @@ public class Player {
 		y += dy;
 	}
 	
-	public void simpleShot(long currentTime) {
-	    if (currentTime - lastShotTime > SHOT_DELAY) {
-	        this.shots.add(new Shot(x + width, y + (height / 2)));
-	        lastShotTime = currentTime;
-	    }
+	public void simpleShot() {
+		this.shots.add(new Shot(x + width, y + ( height / 2 )));
 	}
 	
 	public void keyPressed(KeyEvent key) {
-		long currentTime = System.currentTimeMillis();
-
-	    int code = key.getKeyCode();
-
-	    if (code == KeyEvent.VK_A) {
-	        simpleShot(currentTime);
-	    }
+		int code  = key.getKeyCode();
+		
+		if(code == KeyEvent.VK_A) {
+			simpleShot();
+		}
 		
 		if(code == KeyEvent.VK_UP) {
 			dy = -3;

@@ -36,21 +36,18 @@ public class Player {
 		y += dy;
 	}
 	
-	public void simpleShot(long currentTime) {
-	    if (currentTime - lastShotTime > SHOT_DELAY) {
+	public void simpleShot() {
+		if (shots.isEmpty() || !shots.get(shots.size() - 1).isVisible()) {
 	        this.shots.add(new Shot(x + width, y + (height / 2)));
-	        lastShotTime = currentTime;
 	    }
 	}
 	
 	public void keyPressed(KeyEvent key) {
-		long currentTime = System.currentTimeMillis();
-
-	    int code = key.getKeyCode();
-
-	    if (code == KeyEvent.VK_A) {
-	        simpleShot(currentTime);
-	    }
+		int code  = key.getKeyCode();
+		
+		if(code == KeyEvent.VK_A) {
+			simpleShot();
+		}
 		
 		if(code == KeyEvent.VK_UP) {
 			dy = -3;

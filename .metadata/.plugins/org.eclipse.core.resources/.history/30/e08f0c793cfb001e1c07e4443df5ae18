@@ -7,7 +7,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
-import java.util.List;
+
 
 import javax.swing.ImageIcon;
 import javax.swing.JPanel;
@@ -41,14 +41,6 @@ public class Stage extends JPanel implements ActionListener{
 		Graphics2D graphics = (Graphics2D) g;
 		graphics.drawImage(background, 0, 0, null);
 		graphics.drawImage(player.getImage(), player.getX(), player.getY(), this);
-		
-		List<Shot> shots = player.getShots();
-		for(int i = 0; i < shots.size(); i++) {
-			Shot m  = shots.get(i);
-			m.load();
-			graphics.drawImage(m.getImage(), m.getX(), m.getY(), this);
-		}
-		
 		g.dispose();
 	}
 	
@@ -56,14 +48,6 @@ public class Stage extends JPanel implements ActionListener{
 	public void actionPerformed(ActionEvent e) {
 		player.update();
 		List<Shot> shots = player.getShots();
-		for(int i = 0; i < shots.size(); i++) {
-			Shot m = shots.get(i);
-			if(m.isVisible()) {
-				m.update();
-			} else {
-				shots.remove(i);
-			}
-		}
 		repaint();
 	}
 	

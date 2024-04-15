@@ -2,8 +2,6 @@ package game.Model;
 
 import java.awt.Image;
 import java.awt.event.KeyEvent;
-import java.util.ArrayList;
-import java.util.List;
 
 import javax.swing.ImageIcon;
 
@@ -14,14 +12,11 @@ public class Player {
 	private Image image;
 	private int height, width;
 	private List <Shot> shots;
-	private long lastShotTime;
-	private static final long SHOT_DELAY = 200;	
+	
 	
 	public Player() {
 		this.x = 100;
 		this.y = 100;
-		
-		shots = new ArrayList<Shot>();
 	}
 	
 	public void load() {
@@ -36,21 +31,8 @@ public class Player {
 		y += dy;
 	}
 	
-	public void simpleShot(long currentTime) {
-	    if (currentTime - lastShotTime > SHOT_DELAY) {
-	        this.shots.add(new Shot(x + width, y + (height / 2)));
-	        lastShotTime = currentTime;
-	    }
-	}
-	
 	public void keyPressed(KeyEvent key) {
-		long currentTime = System.currentTimeMillis();
-
-	    int code = key.getKeyCode();
-
-	    if (code == KeyEvent.VK_A) {
-	        simpleShot(currentTime);
-	    }
+		int code  = key.getKeyCode();
 		
 		if(code == KeyEvent.VK_UP) {
 			dy = -3;
@@ -101,10 +83,6 @@ public class Player {
 
 	public Image getImage() {
 		return image;
-	}
-
-	public List<Shot> getShots() {
-		return shots;
 	}
 	
 	

@@ -31,12 +31,10 @@ public class Shot {
 	}
 	
 	public void update() {
-		if (isVisible) {
-	        this.x += SPEED;
-	        if (this.x > WIDTH) {
-	            isVisible = false;
-	        }
-	    }
+		this.x += SPEED;
+			if(this.x > WIDTH) {
+				isVisible = false;
+			}
 	}
 
 	public boolean isVisible() {
