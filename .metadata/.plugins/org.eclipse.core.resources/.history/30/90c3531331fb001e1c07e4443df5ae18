@@ -1,0 +1,27 @@
+package game.Model;
+
+import java.awt.Image;
+
+import javax.swing.ImageIcon;
+
+public class Player {
+	
+	private int x, y;
+	private int dx, dy;
+	private Image image;
+	private int height, width;
+	
+	public Player() {
+		this.x = 100;
+		this.y = 100;
+	}
+	
+	public void load() {
+		ImageIcon reference = new ImageIcon("res\\spaceship2.gif");
+		image = reference.getImage();
+		height = image.getHeight(null);
+	}
+	
+	
+	
+}

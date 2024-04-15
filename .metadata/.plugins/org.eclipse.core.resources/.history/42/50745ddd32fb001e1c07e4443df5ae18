@@ -54,19 +54,19 @@ public class Player {
 		int code  = key.getKeyCode();
 		
 		if(code == KeyEvent.VK_UP) {
-			dy = 0;
+			dy = -3;
 		}
 		
 		if(code == KeyEvent.VK_DOWN) {
-			dy = 0;
+			dy = 3;
 		}
 		
 		if(code == KeyEvent.VK_LEFT) {
-			dx = 0;
+			dx = -3;
 		}
 		
 		if(code == KeyEvent.VK_RIGHT) {
-			dx = 0;
+			dx = 3;
 		}
 		
 	}
