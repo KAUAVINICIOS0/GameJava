@@ -1,0 +1,4 @@
+INDEX VERSION 1.134+C:\Source_game\.metadata\.plugins\org.eclipse.jdt.core
+3174915267.index
+1865797976.index
+2577175673.index

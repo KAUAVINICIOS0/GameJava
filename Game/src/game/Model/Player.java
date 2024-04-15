@@ -1,0 +1,20 @@
+package game.Model;
+
+import java.awt.Image;
+
+public class Player {
+	
+	private int x, y;
+	private int dx, dy;
+	private Image image;
+	private int height, width;
+	
+	public Player() {
+		this.x = 100;
+		this.y = 100;
+		
+	}
+	
+	
+	
+}

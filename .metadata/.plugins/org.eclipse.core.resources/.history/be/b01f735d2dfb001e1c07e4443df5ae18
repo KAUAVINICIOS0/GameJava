@@ -1,0 +1,16 @@
+package game.Model;
+
+import java.awt.Image;
+
+import javax.swing.ImageIcon;
+
+public class Stage {
+	
+	private Image background;
+	
+	
+	public Stage() {
+		ImageIcon reference = new ImageIcon();
+		background = reference.getImage();
+	}
+}
