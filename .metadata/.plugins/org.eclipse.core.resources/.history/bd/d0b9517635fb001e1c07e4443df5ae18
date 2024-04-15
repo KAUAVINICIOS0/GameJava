@@ -52,13 +52,11 @@ public class Stage extends JPanel implements ActionListener{
 	
 	private class keyboardAdapter extends KeyAdapter{
 		
-		@Override
 		public void keyPressed(KeyEvent e) {
 			player.keyPressed(e);
 		}
 		
-		@Override
-		public void keyReleased(KeyEvent e) {
+		public void keyRelease(KeyEvent e) {
 			player.keyRelease(e);
 		}
 	}

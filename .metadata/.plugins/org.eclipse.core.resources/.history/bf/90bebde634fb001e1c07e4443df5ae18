@@ -8,22 +8,15 @@ import java.awt.event.ActionListener;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 
-
 import javax.swing.ImageIcon;
 import javax.swing.JPanel;
-import javax.swing.Timer;
 
 public class Stage extends JPanel implements ActionListener{
 	
 	private Image background;
 	private Player player;
-	private Timer timer;
 	
 	public Stage() {
-		setFocusable(true);
-		setDoubleBuffered(true);
-		
-		
 		ImageIcon reference = new ImageIcon("res\\background.jpg");
 		background = reference.getImage();
 		
@@ -31,9 +24,6 @@ public class Stage extends JPanel implements ActionListener{
 		player.load();
 		
 		addKeyListener(new keyboardAdapter());
-		
-		timer = new Timer(5, this);
-		timer.start();
 	}
 	
 	
@@ -52,13 +42,11 @@ public class Stage extends JPanel implements ActionListener{
 	
 	private class keyboardAdapter extends KeyAdapter{
 		
-		@Override
 		public void keyPressed(KeyEvent e) {
 			player.keyPressed(e);
 		}
 		
-		@Override
-		public void keyReleased(KeyEvent e) {
+		public void keyRelease(KeyEvent e) {
 			player.keyRelease(e);
 		}
 	}
